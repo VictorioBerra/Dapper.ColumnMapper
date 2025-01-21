@@ -56,8 +56,8 @@ using Dapper.ColumnMapper;
 
 public class User
 {
-[ColumnName("user_id")]
-public Guid Id { get; set; }
+    [ColumnName("user_id")]
+    public Guid Id { get; set; }
 
     [ColumnName("user_name")]
     public string Name { get; set; }
@@ -74,10 +74,10 @@ using Dapper.ColumnMapper;
 
 public class Program
 {
-public static void Main(string[] args)
-{
-// Register custom type maps
-DapperTypeMappingConfig.RegisterTypeMaps();
+    public static void Main(string[] args)
+    {
+        // Register custom type maps
+        DapperTypeMappingConfig.RegisterTypeMaps();
 
         // Continue with application startup...
     }
@@ -93,7 +93,7 @@ using Microsoft.Data.SqlClient;
 
 public class UserRepository
 {
-private readonly string _connectionString = "YourConnectionString";
+    private readonly string _connectionString = "YourConnectionString";
 
     public IEnumerable<User> GetAllUsers()
     {
@@ -113,8 +113,8 @@ using Dapper.ColumnMapper;
 
 public class Product
 {
-[ColumnName("product_id")]
-public int Id { get; set; }
+    [ColumnName("product_id")]
+    public int Id { get; set; }
 
     [ColumnName("product_name")]
     public string Name { get; set; }
@@ -130,7 +130,7 @@ using Microsoft.Data.SqlClient;
 
 public class ProductRepository
 {
-private readonly string _connectionString = "YourConnectionString";
+    private readonly string _connectionString = "YourConnectionString";
 
     public ProductRepository()
     {
@@ -157,12 +157,12 @@ using Microsoft.Data.SqlClient;
 
 namespace SampleApp
 {
-class Program
-{
-static void Main(string[] args)
-{
-// Register custom type maps
-DapperTypeMappingConfig.RegisterTypeMaps();
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Register custom type maps
+            DapperTypeMappingConfig.RegisterTypeMaps();
 
             // Connection string to your database
             var connectionString = "YourConnectionString";
